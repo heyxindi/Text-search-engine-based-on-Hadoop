@@ -1,0 +1,64 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <link href="https://fonts.googleapis.com/css?family=Bellefair|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'styles-merged.css' %}" >
+
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+	
+  </head>
+  <body>
+    
+    <!-- Fixed navbar -->
+
+    <section>
+      <ul class="slides">
+        <li style="background-image: url({% static 'p2.jpg' %})" class="overlay" style=" " >
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <div class="probootstrap-slider-text text-center">
+                   <h1 ></br></br>Quick Search Here!</br></h1>
+                   <form method="POST">
+                   {{form}}
+                   {% csrf_token %}
+                   <div class="search_bar">
+		       <!-- <input type="text" value="" autocomplete = "on"> -->
+		           <button>Search</button>
+                           </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+                           </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+                           </br></br></br></br>
+		   </div>
+
+                </div>
+                
+              </div>
+           </div>
+        </li>
+      </ul>
+    </section>
+
+    
+    
+
+    
+    
+ 
+    
+    
+
+    <script src="{% static 'front/js/scripts.min.js' %}"></script>
+    <script src="{% static 'front/js/custom.min.js' %}"></script>
+
+  </body>
+</html>

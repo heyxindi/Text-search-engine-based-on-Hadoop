@@ -1,0 +1,102 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <link href="https://fonts.googleapis.com/css?family=Bellefair|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'styles-merged.css' %}" >
+
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>.
+    <![endif]-->
+  </head>
+  <body>
+    
+    <!-- Fixed navbar -->
+    
+   
+
+    
+      <ul class="slides">
+        <li style="background-image: url({% static 'p1.jpg' %})" class="overlay">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+              
+                <div class="probootstrap-slider-text text-center">
+				    <h1 class="probootstrap-heading"></br></br></br>Search Result</br></br></br></h1>
+                
+</div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="overlay"> </li>
+        <li class="overlay"> </li>
+        
+      </ul>
+   <p>{{content}}</p>
+   
+    
+    <section class="probootstrap-section probootstrap-bg-white">
+	<div class="container">
+      <div class="row">
+        
+      </div>
+        <!-- END row -->
+        <div class="row mb40">
+        
+		<div class="searchbar">
+		<div class="search-input" >
+                <input type="text" style="background:#E0E0E0">
+				<button>Search</button>
+            </div>
+        </div>
+       <!--        used to show the filename that contain the post_data          -->  
+        
+       {% for j in result %}
+            {% for i in j %}
+                {% if i in filename %}
+                    <a href ="/static/dataset/{{i}}.txt"> <div>{{i}}</div></a>
+                               
+                {% else %}
+                    <font size =3>{{ i }}</font>
+                {% endif %}
+            {% endfor %}       
+            
+                <base target = "_blank">
+                
+
+            {% endfor %}
+		
+        </div>
+        
+<!-- 
+{% for j in result %}           #context['result'] in views
+{% for i in j %}
+{% if i in filename %}
+{% else %}
+{% endif %}
+{% endfor %}
+{% endfor %}
+-->
+
+
+
+        <!-- END row -->
+
+        </div>
+    </section>
+
+    <script src="js/scripts.min.js"></script>
+    <script src="js/custom.min.js"></script>
+
+  </body>
+</html>
